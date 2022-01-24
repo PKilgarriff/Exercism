@@ -108,7 +108,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_words_other_than_themselves_can_be_anagrams
-    skip
+    # skip
     detector = Anagram.new('LISTEN')
     anagrams = detector.match(%w[Listen Silent LISTEN])
     expected = ["Silent"]
