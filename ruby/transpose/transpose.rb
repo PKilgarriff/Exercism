@@ -13,24 +13,23 @@ class Transpose
     unless @input.all? { |row| row.size == max_length }
     end
     transposed = @input.map { |row| row.chars }.transpose
-    if @input.include?("\n")
-      @input = @input.split("\n")
-      puts @input.class
-    else
-      @input = [@input]
-      # puts @input.class
-    end
-    # puts @input.size
     transposed.map! { |new_row| new_row.join }
     p transposed.join("\n")
     return transposed.join("\n")
-    # @input.chars
-    # puts @input.join()
   end
 end
 
-# Check for newline characters
-  # if any exist then split into lines - array of strings
-  # if none exist, then just split stright into characters?
-
-#Transpose.transpose("ABC\nDEF")
+# Handle the special cases
+  # Empty input -> return empty
+  # Single line -> join chars with newline
+# Split input on newline characters to array of strings
+# Handle strings of differing lengths
+  # Check for any shorter strings
+    # Pad shorter strings with spaces
+  # Check all strings are the same length
+    # If so, use transpose method
+    # Rejoin all strings with newline characters
+# If string was padded with spaces, these will need to be brought left
+# Count spaces in each row
+# Remove all spaces from row (trim? gsub(' ','')?)
+  # then pad to the left with the total number of spaces (rjust)
