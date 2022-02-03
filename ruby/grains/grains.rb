@@ -17,5 +17,9 @@ class Grains
     # Replace each number with the result from the square function
     # Return the sum of those results
     return squares.map {|square_index| self.square(square_index) }.sum
+    # Below line from community solution
+    # but doesn't seem noticeably faster than above
+    # Best way to test speed?
+    # return (2 ** 64) - 1
   end
 end
