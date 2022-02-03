@@ -1,7 +1,18 @@
-=begin
-Write your code for the 'Grains' exercise in this file. Make the tests in
-`grains_test.rb` pass.
+# Make a class called Grains
+# Square 1 will have 1 grain (2 ** 0)
+# Square 2 will have 2 grains (2 ** 1)
+# Square 3 will have 4 grains (2 ** 2)
 
-To get started with TDD, see the `README.md` file in your
-`ruby/grains` directory.
-=end
+class Grains
+  def self.square(index)
+    # Throw Error if input that already contains '§' character
+    raise ArgumentError if index < 1 || index > 64
+    # Square will contain 2 to the power of one less than the index grains
+    return 2 ** (index - 1)
+  end
+
+  def self.total
+    squares = [*1..64]
+    return squares.map {|square_index| self.square(square_index) }.sum
+  end
+end
