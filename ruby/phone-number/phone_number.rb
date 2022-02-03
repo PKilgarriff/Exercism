@@ -26,7 +26,7 @@ class PhoneNumber
         return false
       end
     end
-
+ 
     case code.to_i
     when 0...1
       puts "#{code} is Invalid #{type.capitalize} code"
