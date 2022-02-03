@@ -1,5 +1,7 @@
 class Transpose
   def self.transpose(input)
+    # Throw Error if input that already contains '§' character
+    raise ArgumentError if input.include?('§')
     # Handle empty input
     return "" if input == ""
     # Handle single row input
@@ -10,14 +12,18 @@ class Transpose
     @input = input.split("\n")
     # Here is where to deal with rows with different lengths
     max_length = @input.max_by(&:size).size
-    puts "Max Length #{max_length}"
+    # puts "Max Length #{max_length}"
     strings_padded = false
     unless @input.all? { |row| row.size == max_length }
-      @input.map! { |row| row.ljust(max_length) }
+      @input.map! { |row| row.ljust(max_length, '§') }
       strings_padded = true
     end
     transposed = @input.map { |row| row.chars }.transpose
     transposed.map! { |new_row| new_row.join }
+    # regex to take all instances of § from the end of strings
+    transposed.each { |row| row.gsub!(/§*\z/, '') }
+    # Substitute remaining § with spaces
+    transposed.each { |row| row.gsub!('§', ' ') }
     # p transposed.join("\n")
     return transposed.join("\n")
   end
