@@ -5,3 +5,9 @@ Write your code for the 'Flatten Array' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/flatten-array` directory.
 =end
+
+class FlattenArray
+  def self.flatten(input)
+    return input.flatten.select { |item| item != nil }
+  end
+end
