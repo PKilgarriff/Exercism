@@ -5,14 +5,17 @@
 
 class Grains
   def self.square(index)
-    # Throw Error if input that already contains '§' character
+    # Throw Error if index is less than 1 or more than 64
     raise ArgumentError if index < 1 || index > 64
     # Square will contain 2 to the power of one less than the index grains
     return 2 ** (index - 1)
   end
 
   def self.total
+    # Create an array of numbers 1 to 64
     squares = [*1..64]
+    # Replace each number with the result from the square function
+    # Return the sum of those results
     return squares.map {|square_index| self.square(square_index) }.sum
   end
 end
