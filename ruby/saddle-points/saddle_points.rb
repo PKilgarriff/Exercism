@@ -6,8 +6,9 @@
 #### I have already completed a matrix exercise and can reuse that code ####
 
 # Work out minimum value in each column
-# Work out maximum value in each column
+# Work out maximum value in each row
 # See if those values match?
+# Return an array of [row, column] for each saddle point
 
 class Matrix
 	attr_reader :rows, :columns
@@ -26,6 +27,11 @@ class Matrix
 		@columns = @rows.transpose
 	end
 
+  def display_matrix
+    @rows.each { |row| p row }
+  end
+
   def saddle_points
+    p column_mins = @columns.map { |column| column.min }
   end
 end
