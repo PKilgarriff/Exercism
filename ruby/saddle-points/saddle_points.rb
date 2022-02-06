@@ -18,11 +18,11 @@ class Matrix
 		# splitting the input string into an array of strings representing the rows
 		array = string.split("\n")
 		# going through each row string and making an array of actual integers
-		array.each { |row|
+		array.each do |row|
 			# splitting on the whitespace by default
 			numbers = row.split
 			@rows.push( numbers.map { |number| number.to_i } )
-		}
+    end
 		# Turns out there's a method for this exact situation, that works with a 2D array with equal numbers of rows and columns
 		@columns = @rows.transpose
 	end
@@ -32,6 +32,27 @@ class Matrix
   end
 
   def saddle_points
-    p column_mins = @columns.map { |column| column.min }
+    column_mins = @columns.map { |column| column.min }
+    row_maxs = @rows.map { |row| row.max }
+    column_min_locations = []
+    row_max_locations = []
+    @columns.each_with_index do |column, column_idx|
+      # p column
+      # puts column_mins[column_idx]
+      column_min_locations.push( column.map.with_index { |value, row_idx| value == column_mins[column_idx] ? [row_idx, column_idx] : nil }.compact)
+    end
+    @rows.each_with_index do |row, row_idx|
+      # p row
+      # puts row_maxs[row_idx]
+      row_max_locations.push( row.map.with_index { |value, column_idx| value == row_maxs[row_idx] ? [row_idx, column_idx] : nil }.compact)
+    end
+    column_min_locations.flatten!(1)
+    row_max_locations.flatten!(1)
+    column_min_locations.intersection(row_max_locations)
   end
 end
+
+# Possible alternative approach
+  # collect the 'location' of all the column mins
+  # collect the 'location' of all the row maxes
+  # do a boolean intersection on those two sets of arrays to keep only those that appear in both
