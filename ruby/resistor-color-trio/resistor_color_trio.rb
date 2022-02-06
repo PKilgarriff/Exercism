@@ -50,13 +50,3 @@ class ResistorColorTrio
     "Resistor value: #{format_units(resistor_value)}"
   end
 end
-
-
-# irb -r './resistor-color-trio/resistor_color_trio.rb'
-class Greeting
-  attr_reader :greeting
-  
-  def initialize
-    @greeting = "Hello I am in the function"
-  end
-end
