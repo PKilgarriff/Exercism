@@ -1,7 +1,13 @@
-=begin
-Write your code for the 'Nucleotide Count' exercise in this file. Make the tests in
-`nucleotide_count_test.rb` pass.
+# Create a class called Nucleotide
+# define a method from_dna that takes a string
+# define a method count that takes a single character
 
-To get started with TDD, see the `README.md` file in your
-`ruby/nucleotide-count` directory.
-=end
+class Nucleotide
+  def self.from_dna(string)
+    @dna = string.chars
+  end
+
+  def count(character)
+    @dna.select { |base| base == character}.count
+  end
+end

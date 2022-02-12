@@ -7,17 +7,17 @@ class NucleotideTest < Minitest::Test
   end
 
   def test_repetitive_cytidine_gets_counted
-    skip
+    # skip
     assert_equal 5, Nucleotide.from_dna('CCCCC').count('C')
   end
 
   def test_counts_only_thymidine
-    skip
+    # skip
     assert_equal 1, Nucleotide.from_dna('GGGGGTAACCCGG').count('T')
   end
 
   def test_counts_a_nucleotide_only_once
-    skip
+    # skip
     dna = Nucleotide.from_dna('CGATTGGG')
     dna.count('T')
     dna.count('T')
