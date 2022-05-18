@@ -19,6 +19,10 @@
 //
 // Get those rates calculated!
 
+
+// The number of hours the freelancer works per day
+const HOURS_PER_WORKING_DAY = 8;
+
 /**
  * The day rate, given a rate per hour
  *
@@ -26,7 +30,7 @@
  * @returns {number} the rate per day
  */
 export function dayRate(ratePerHour) {
-  throw new Error('Remove this line and implement the function');
+  return HOURS_PER_WORKING_DAY * ratePerHour;
 }
 
 /**
