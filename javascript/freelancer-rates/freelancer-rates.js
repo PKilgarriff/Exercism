@@ -44,6 +44,7 @@ export function daysInBudget(budget, ratePerHour) {
   return Math.floor(budget / dayRate(ratePerHour));
 }
 
+const BILLABLE_DAYS_PER_MONTH = 22;
 /**
  * Calculates the discounted rate for large projects, rounded up
  *
@@ -53,5 +54,9 @@ export function daysInBudget(budget, ratePerHour) {
  * @returns {number} the rounded up discounted rate
  */
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
-  throw new Error('Remove this line and implement the function');
+  let fullpriceDays = numDays % BILLABLE_DAYS_PER_MONTH;
+  let discountDays = numDays - fullpriceDays;
+  let discountChargedDays = (1 - discount) * discountDays;
+  let totalCost = (discountChargedDays + fullpriceDays) * dayRate(ratePerHour);
+  return Math.ceil(totalCost); 
 }
