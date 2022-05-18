@@ -21,7 +21,7 @@ export function canExecuteFastAttack(knightIsAwake) {
  * @returns {boolean} Whether or not you can spy on someone.
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  return [knightIsAwake, archerIsAwake, prisonerIsAwake].includes(true);
+  return knightIsAwake || archerIsAwake || prisonerIsAwake;
 }
 
 /**
@@ -52,11 +52,5 @@ export function canFreePrisoner(
   prisonerIsAwake,
   petDogIsPresent
 ) {
-    if (prisonerIsAwake && !archerIsAwake && !knightIsAwake) {
-      return true;
-    } else if (!archerIsAwake) {
-      return petDogIsPresent ? true : false;
-    } else {
-      return false;
-    }
+    return (prisonerIsAwake && !archerIsAwake && !knightIsAwake) || (!archerIsAwake && petDogIsPresent)
 }
