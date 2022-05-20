@@ -11,7 +11,7 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  throw new Error('Please implement the totalBirdCount function');
+  return birdsPerDay.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 }
 
 /**

@@ -1,17 +1,17 @@
 import { totalBirdCount, birdsInWeek, fixBirdCountLog } from './bird-watcher';
 
 describe('totalBirdCount', () => {
-  xtest('calculates the correct total number of birds', () => {
+  test('calculates the correct total number of birds', () => {
     const birdsPerDay = [9, 0, 8, 4, 5, 1, 3];
     expect(totalBirdCount(birdsPerDay)).toBe(30);
   });
 
-  xtest('works for a short bird count list', () => {
+  test('works for a short bird count list', () => {
     const birdsPerDay = [2];
     expect(totalBirdCount(birdsPerDay)).toBe(2);
   });
 
-  xtest('works for a long bird count list', () => {
+  test('works for a long bird count list', () => {
     // prettier-ignore
     const birdsPerDay = [2, 8, 4, 1, 3, 5, 0, 4, 1, 6, 0, 3, 0, 1, 5, 4, 1, 1, 2, 6];
     expect(totalBirdCount(birdsPerDay)).toBe(57);
