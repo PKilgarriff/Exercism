@@ -202,7 +202,7 @@ describe('make the bottom card disappear', () => {
 });
 
 describe('make cards appear at the bottom', () => {
-  xtest('adding a second card to the bottom', () => {
+  test('adding a second card to the bottom', () => {
     const stack = [1];
     const newCard = 5;
 
@@ -210,7 +210,7 @@ describe('make cards appear at the bottom', () => {
     expect(insertItemAtBottom(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding a third card to the bottom', () => {
+  test('adding a third card to the bottom', () => {
     const stack = [5, 1];
     const newCard = 9;
 
@@ -218,7 +218,7 @@ describe('make cards appear at the bottom', () => {
     expect(insertItemAtBottom(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding a fourth card to the bottom', () => {
+  test('adding a fourth card to the bottom', () => {
     const stack = [9, 5, 1];
     const newCard = 2;
 
@@ -226,7 +226,7 @@ describe('make cards appear at the bottom', () => {
     expect(insertItemAtBottom(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding a different fourth card to the bottom', () => {
+  test('adding a different fourth card to the bottom', () => {
     const stack = [9, 5, 1];
     const newCard = 8;
 
@@ -234,7 +234,7 @@ describe('make cards appear at the bottom', () => {
     expect(insertItemAtBottom(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding multiple cards to the stack to the bottom', () => {
+  test('adding multiple cards to the stack to the bottom', () => {
     const stack = [1];
 
     insertItemAtBottom(stack, 5);
