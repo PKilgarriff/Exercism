@@ -108,7 +108,7 @@ describe('make cards appear at the top', () => {
 });
 
 describe('make cards disappear', () => {
-  xtest('remove the card at the bottom', () => {
+  test('remove the card at the bottom', () => {
     const stack = [1, 2, 3, 4];
     const position = 0;
 
@@ -126,7 +126,7 @@ describe('make cards disappear', () => {
     expect(removeItem(stack, position)).toStrictEqual(expected);
   });
 
-  xtest('remove the card at the top', () => {
+  test('remove the card at the top', () => {
     const stack = [1, 2, 3, 4];
     const position = 3;
 
@@ -134,7 +134,7 @@ describe('make cards disappear', () => {
     expect(removeItem(stack, position)).toStrictEqual(expected);
   });
 
-  xtest('remove the second card', () => {
+  test('remove the second card', () => {
     const stack = [1, 2, 3, 4];
     const position = 1;
 
@@ -142,7 +142,7 @@ describe('make cards disappear', () => {
     expect(removeItem(stack, position)).toStrictEqual(expected);
   });
 
-  xtest('remove the middle two cards', () => {
+  test('remove the middle two cards', () => {
     const stack = [1, 2, 3, 4];
 
     removeItem(stack, 1);
