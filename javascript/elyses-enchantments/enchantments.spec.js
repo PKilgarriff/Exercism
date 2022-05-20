@@ -64,7 +64,7 @@ describe('sleight of hand', () => {
 });
 
 describe('make cards appear at the top', () => {
-  xtest('adding a second card at the top', () => {
+  test('adding a second card at the top', () => {
     const stack = [1];
     const newCard = 5;
 
@@ -72,7 +72,7 @@ describe('make cards appear at the top', () => {
     expect(insertItemAtTop(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding a third card at the top', () => {
+  test('adding a third card at the top', () => {
     const stack = [1, 5];
     const newCard = 9;
 
@@ -80,7 +80,7 @@ describe('make cards appear at the top', () => {
     expect(insertItemAtTop(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding a fourth card at the top', () => {
+  test('adding a fourth card at the top', () => {
     const stack = [1, 5, 9];
     const newCard = 2;
 
@@ -88,7 +88,7 @@ describe('make cards appear at the top', () => {
     expect(insertItemAtTop(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding a different fourth card at the top', () => {
+  test('adding a different fourth card at the top', () => {
     const stack = [1, 5, 9];
     const newCard = 8;
 
@@ -96,7 +96,7 @@ describe('make cards appear at the top', () => {
     expect(insertItemAtTop(stack, newCard)).toStrictEqual(expected);
   });
 
-  xtest('adding multiple cards to the stack at the top', () => {
+  test('adding multiple cards to the stack at the top', () => {
     const stack = [1];
 
     insertItemAtTop(stack, 5);
