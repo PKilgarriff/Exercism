@@ -247,7 +247,7 @@ describe('make cards appear at the bottom', () => {
 
 describe('check your work', () => {
   describe('an empty stack of cards', () => {
-    xtest('has 0 cards', () => {
+    test('has 0 cards', () => {
       const stack = [];
 
       expect(checkSizeOfStack(stack, 0)).toBe(true);
@@ -256,7 +256,7 @@ describe('check your work', () => {
   });
 
   describe('a stack with a single card', () => {
-    xtest('has exactly 1 card', () => {
+    test('has exactly 1 card', () => {
       const stack = [7];
 
       expect(checkSizeOfStack(stack, 0)).toBe(false);
@@ -266,7 +266,7 @@ describe('check your work', () => {
   });
 
   describe('a stack with the even cards', () => {
-    xtest('has exactly 4 cards', () => {
+    test('has exactly 4 cards', () => {
       const stack = [2, 4, 6, 8];
 
       expect(checkSizeOfStack(stack, 3)).toBe(false);
@@ -276,7 +276,7 @@ describe('check your work', () => {
   });
 
   describe('a stack with the odd cards', () => {
-    xtest('has exactly 5 cards', () => {
+    test('has exactly 5 cards', () => {
       const stack = [1, 3, 5, 7, 9];
 
       expect(checkSizeOfStack(stack, 3)).toBe(false);
