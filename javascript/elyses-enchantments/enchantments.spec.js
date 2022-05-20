@@ -35,7 +35,7 @@ describe('pick a card', () => {
 });
 
 describe('sleight of hand', () => {
-  xtest('replace the first card with a 7', () => {
+  test('replace the first card with a 7', () => {
     const stack = [1, 2, 3];
     const position = 0;
     const replacement = 7;
@@ -44,7 +44,7 @@ describe('sleight of hand', () => {
     expect(setItem(stack, position, replacement)).toStrictEqual(expected);
   });
 
-  xtest('replace the middle card with a 5', () => {
+  test('replace the middle card with a 5', () => {
     const stack = [2, 2, 2];
     const position = 1;
     const replacement = 5;
@@ -53,7 +53,7 @@ describe('sleight of hand', () => {
     expect(setItem(stack, position, replacement)).toStrictEqual(expected);
   });
 
-  xtest('replace the last card with a 7', () => {
+  test('replace the last card with a 7', () => {
     const stack = [7, 7, 6];
     const position = 2;
     const replacement = 7;
