@@ -154,19 +154,19 @@ describe('make cards disappear', () => {
 });
 
 describe('make the top card disappear', () => {
-  xtest('remove the only card from the top', () => {
+  test('remove the only card from the top', () => {
     const stack = [1];
     const expected = [];
     expect(removeItemFromTop(stack)).toStrictEqual(expected);
   });
 
-  xtest('remove the card from the top', () => {
+  test('remove the card from the top', () => {
     const stack = [1, 2, 3];
     const expected = [1, 2];
     expect(removeItemFromTop(stack)).toStrictEqual(expected);
   });
 
-  xtest('remove two cards from the top', () => {
+  test('remove two cards from the top', () => {
     const stack = [1, 2, 3];
 
     removeItemFromTop(stack);
