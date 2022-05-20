@@ -5,13 +5,17 @@
 // implementing this exercise.
 
 /**
- * Determines whether or not you need a licence to operate a certain kind of vehicle.
+ * Determines whether or not you need a license to operate a certain kind of vehicle.
  *
  * @param {string} kind
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-  throw new Error('Please implement the needsLicense function');
+  if (kind === 'car' || kind === 'truck') {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -23,7 +27,9 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export function chooseVehicle(option1, option2) {
-  throw new Error('Please implement the chooseVehicle function');
+  const options = [option1, option2];
+  options.sort();
+  return `${options[0]} is clearly the better choice.`;
 }
 
 /**
