@@ -41,5 +41,8 @@ export function chooseVehicle(option1, option2) {
  * @returns expected resell price in the dealership
  */
 export function calculateResellPrice(originalPrice, age) {
-  throw new Error('Please implement the calculateResellPrice function');
+  let retainedValue = 0.8;
+  if (age >= 3) retainedValue = 0.7;
+  if (age > 10) retainedValue = 0.5;
+  return originalPrice * retainedValue;
 }
