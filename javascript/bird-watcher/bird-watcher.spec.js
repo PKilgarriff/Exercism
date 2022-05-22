@@ -46,13 +46,13 @@ describe('birdsInWeek', () => {
 });
 
 describe('fixBirdCountLog', () => {
-  xtest('returns a bird count list with the corrected values', () => {
+  test('returns a bird count list with the corrected values', () => {
     const birdsPerDay = [3, 0, 5, 1, 0, 4, 1, 0, 3, 4, 3, 0];
     const expected = [4, 0, 6, 1, 1, 4, 2, 0, 4, 4, 4, 0];
     expect(fixBirdCountLog(birdsPerDay)).toEqual(expected);
   });
 
-  xtest('does not create a new array', () => {
+  test('does not create a new array', () => {
     const birdsPerDay = [2, 0, 1, 4, 1, 3, 0];
 
     // This checks that the same object that was passed in is returned.
@@ -60,11 +60,11 @@ describe('fixBirdCountLog', () => {
     expect(Object.is(fixBirdCountLog(birdsPerDay), birdsPerDay)).toBe(true);
   });
 
-  xtest('works for a short bird count list', () => {
+  test('works for a short bird count list', () => {
     expect(fixBirdCountLog([4, 2])).toEqual([5, 2]);
   });
 
-  xtest('works for a long bird count list', () => {
+  test('works for a long bird count list', () => {
     // prettier-ignore
     const birdsPerDay = [2, 8, 4, 1, 3, 5, 0, 4, 1, 6, 0, 3, 0, 1, 5, 4, 1, 1, 2, 6];
     // prettier-ignore
