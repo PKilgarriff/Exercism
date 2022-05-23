@@ -4,6 +4,15 @@
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
 
+const preparationTimes = {
+  'Pure Strawberry Joy': 0.5,
+  'Energizer': 1.5,
+  'Green Garden': 1.5,
+  'Tropical Island': 3,
+  'All or Nothing': 5,
+  "all other drinks": 2.5,
+};
+
 /**
  * Determines how long it takes to prepare a certain juice.
  *
@@ -11,7 +20,7 @@
  * @returns {number} time in minutes
  */
 export function timeToMixJuice(name) {
-  throw new Error('Please implement the timeToMixJuice function');
+  return preparationTimes[name] || 2.5;
 }
 
 /**
