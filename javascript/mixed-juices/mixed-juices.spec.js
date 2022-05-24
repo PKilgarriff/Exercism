@@ -61,7 +61,7 @@ describe('limesToCut', () => {
 });
 
 describe('remainingOrders', () => {
-  xtest('correctly determines the remaining orders', () => {
+  test('correctly determines the remaining orders', () => {
     const orders = [
       'Tropical Island',
       'Energizer',
@@ -74,7 +74,7 @@ describe('remainingOrders', () => {
     expect(remainingOrders(7, orders)).toEqual(expected);
   });
 
-  xtest('correctly handles orders that were started because there was time left', () => {
+  test('correctly handles orders that were started because there was time left', () => {
     const orders = [
       'Pure Strawberry Joy',
       'Pure Strawberry Joy',
@@ -91,7 +91,7 @@ describe('remainingOrders', () => {
     expect(remainingOrders(13, orders)).toEqual(expected);
   });
 
-  xtest('counts all orders as fulfilled if there is enough time', () => {
+  test('counts all orders as fulfilled if there is enough time', () => {
     const orders = [
       'Energizer',
       'Green Garden',
@@ -104,7 +104,7 @@ describe('remainingOrders', () => {
     expect(remainingOrders(12, orders)).toEqual([]);
   });
 
-  xtest('works if there is only very little time left', () => {
+  test('works if there is only very little time left', () => {
     const orders = ['Bananas Gone Wild', 'Pure Strawberry Joy'];
     const expected = ['Pure Strawberry Joy'];
 

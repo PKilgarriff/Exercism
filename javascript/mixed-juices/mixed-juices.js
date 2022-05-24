@@ -4,13 +4,14 @@
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
 
+const DEFAULT_PREP_TIME = 2.5;
+
 const preparationTimes = {
   'Pure Strawberry Joy': 0.5,
   'Energizer': 1.5,
   'Green Garden': 1.5,
   'Tropical Island': 3,
   'All or Nothing': 5,
-  "all other drinks": 2.5,
 };
 
 const wedgesFromLime = {
@@ -26,7 +27,7 @@ const wedgesFromLime = {
  * @returns {number} time in minutes
  */
 export function timeToMixJuice(name) {
-  return preparationTimes[name] || 2.5;
+  return preparationTimes[name] || DEFAULT_PREP_TIME;
 }
 
 /**
@@ -57,5 +58,9 @@ export function limesToCut(wedgesNeeded, limes) {
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  throw new Error('Please implement the remainingOrders function');
+  while (timeLeft > 0) {
+    let currentOrder = orders.shift();
+    timeLeft -= preparationTimes[currentOrder] || DEFAULT_PREP_TIME;
+  }
+  return orders;
 }
