@@ -21,7 +21,7 @@ describe('timeToMixJuice', () => {
 });
 
 describe('limesToCut', () => {
-  xtest('calculates the number of limes needed to reach the target supply', () => {
+  test('calculates the number of limes needed to reach the target supply', () => {
     const limes = [
       'small',
       'large',
@@ -37,7 +37,7 @@ describe('limesToCut', () => {
     expect(limesToCut(4, ['medium', 'small'])).toBe(1);
   });
 
-  xtest('uses up all limes if there are not enough to reach the target', () => {
+  test('uses up all limes if there are not enough to reach the target', () => {
     const limes = [
       'small',
       'large',
@@ -51,11 +51,11 @@ describe('limesToCut', () => {
     expect(limesToCut(80, limes)).toBe(7);
   });
 
-  xtest('if no new wedges are needed, no limes are cut', () => {
+  test('if no new wedges are needed, no limes are cut', () => {
     expect(limesToCut(0, ['small', 'large', 'medium'])).toBe(0);
   });
 
-  xtest('works if no limes are available', () => {
+  test('works if no limes are available', () => {
     expect(limesToCut(10, [])).toBe(0);
   });
 });

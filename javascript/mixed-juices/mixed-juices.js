@@ -13,6 +13,12 @@ const preparationTimes = {
   "all other drinks": 2.5,
 };
 
+const wedgesFromLime = {
+  'small': 6,
+  'medium': 8,
+  'large': 10
+};
+
 /**
  * Determines how long it takes to prepare a certain juice.
  *
@@ -32,7 +38,15 @@ export function timeToMixJuice(name) {
  * @returns {number} number of limes cut
  */
 export function limesToCut(wedgesNeeded, limes) {
-  throw new Error('Please implement the limesToCut function');
+  if (wedgesNeeded === 0) { return 0 }
+  let currentWedges = 0;
+  for (let i = 0; i < limes.length; i++ ) {
+    currentWedges += wedgesFromLime[limes[i]];
+    if (currentWedges >= wedgesNeeded) {
+      return i + 1;
+    }
+  };
+  return limes.length;
 }
 
 /**
