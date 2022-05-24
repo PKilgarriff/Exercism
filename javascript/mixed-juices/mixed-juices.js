@@ -39,15 +39,12 @@ export function timeToMixJuice(name) {
  * @returns {number} number of limes cut
  */
 export function limesToCut(wedgesNeeded, limes) {
-  if (wedgesNeeded === 0) { return 0 }
-  let currentWedges = 0;
-  for (let i = 0; i < limes.length; i++ ) {
-    currentWedges += wedgesFromLime[limes[i]];
-    if (currentWedges >= wedgesNeeded) {
-      return i + 1;
-    }
+  let cutLimes = 0;
+  while (wedgesNeeded > 0 && limes.length > 0) {
+    wedgesNeeded -= wedgesFromLime[limes.shift()];
+    cutLimes++; 
   };
-  return limes.length;
+  return cutLimes;
 }
 
 /**
