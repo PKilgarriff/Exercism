@@ -77,7 +77,7 @@ describe('removePlayer', () => {
 });
 
 describe('updateScore', () => {
-  xtest("increases a player's score", () => {
+  test("increases a player's score", () => {
     const scoreBoard = {
       'Amil Pastorius': 99373,
       'Min-seo Shin': 0,
