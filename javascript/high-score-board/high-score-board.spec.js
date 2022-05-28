@@ -131,7 +131,7 @@ describe('applyMondayBonus', () => {
 });
 
 describe('normalizeScore', () => {
-  xtest('applies the normalization function', () => {
+  test('applies the normalization function', () => {
     const params = {
       score: 45,
       normalizeFunction: function (score) {
@@ -142,7 +142,7 @@ describe('normalizeScore', () => {
     expect(normalizeScore(params)).toEqual(125);
   });
 
-  xtest('works for different params', () => {
+  test('works for different params', () => {
     const params = {
       score: 2100,
       normalizeFunction: function (score) {

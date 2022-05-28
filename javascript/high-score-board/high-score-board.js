@@ -67,6 +67,6 @@ export function applyMondayBonus(scoreBoard) {
  * @param {Params} params the parameters for performing the normalization
  * @returns {number} normalized score
  */
-export function normalizeScore(params) {
-  throw new Error('Please implement the normalizeScore function');
+export function normalizeScore({score, normalizeFunction}) { 
+  return normalizeFunction(score); 
 }
