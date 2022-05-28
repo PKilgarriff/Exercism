@@ -100,7 +100,7 @@ describe('updateScore', () => {
 });
 
 describe('applyMondayBonus', () => {
-  xtest('adds 100 points for all players', () => {
+  test('adds 100 points for all players', () => {
     const scoreBoard = {
       'Amil Pastorius': 345,
       'Min-seo Shin': 19,
@@ -120,7 +120,7 @@ describe('applyMondayBonus', () => {
     expect(Object.is(actual, scoreBoard)).toBe(true);
   });
 
-  xtest('does nothing if the score board is empty', () => {
+  test('does nothing if the score board is empty', () => {
     const scoreBoard = {};
     const actual = applyMondayBonus(scoreBoard);
     expect(actual).toEqual({});
