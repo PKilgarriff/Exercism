@@ -42,7 +42,7 @@ describe('addPlayer', () => {
 });
 
 describe('removePlayer', () => {
-  xtest('removes a player from the score board', () => {
+  test('removes a player from the score board', () => {
     const scoreBoard = {
       'Amil Pastorius': 99373,
       'Min-seo Shin': 0,
@@ -61,7 +61,7 @@ describe('removePlayer', () => {
     expect(Object.is(actual, scoreBoard)).toBe(true);
   });
 
-  xtest('does nothing if the player is not on the board', () => {
+  test('does nothing if the player is not on the board', () => {
     const scoreBoard = {
       'Amil Pastorius': 99373,
       'Min-seo Shin': 0,
