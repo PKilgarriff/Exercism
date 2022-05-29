@@ -28,10 +28,10 @@ describe("doesStackIncludeCard", () => {
 });
 
 describe("isEachCardEven", () => {
-  xtest("when all cards are even", () => {
+  test("when all cards are even", () => {
     expect(isEachCardEven([2, 4, 6])).toBe(true);
   });
-  xtest("when any card is odd", () => {
+  test("when any card is odd", () => {
     expect(isEachCardEven([2, 5, 6])).toBe(false);
   });
 });

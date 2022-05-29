@@ -28,6 +28,10 @@ export function doesStackIncludeCard(stack, card) {
   return stack.includes(card);
 }
 
+const isEven = (number) => {
+  return number % 2 === 0;
+};
+
 /**
  * Determine if each card is even
  *
@@ -36,7 +40,9 @@ export function doesStackIncludeCard(stack, card) {
  * @returns {boolean} true if all cards are even, false otherwise
  */
 export function isEachCardEven(stack) {
-  throw new Error("Implement the isEachCardEven function");
+  return stack.every((card) => {
+    return isEven(card);
+  });
 }
 
 /**
