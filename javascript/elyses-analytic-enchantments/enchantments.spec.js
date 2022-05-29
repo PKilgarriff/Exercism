@@ -19,10 +19,10 @@ describe("getCardPosition", () => {
 });
 
 describe("doesStackIncludeCard", () => {
-  xtest("when there is a card found", () => {
+  test("when there is a card found", () => {
     expect(doesStackIncludeCard([1, 2, 3], 1)).toBe(true);
   });
-  xtest("when a card is not found", () => {
+  test("when a card is not found", () => {
     expect(doesStackIncludeCard([1, 2, 3], 4)).toBe(false);
   });
 });
