@@ -69,5 +69,5 @@ export function simpleTicketStatus(tickets, ticketId) {
  * @returns {string | undefined} version
  */
 export function gtcVersion(visitor) {
-  return visitor.gtc.version;
+  return visitor.gtc?.version;
 }

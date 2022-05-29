@@ -130,7 +130,7 @@ describe('gtcVersion', () => {
     expect(gtcVersion(visitor2)).toBe('1.6');
   });
 
-  xtest('returns nothing if there is no gtc object', () => {
+  test('returns nothing if there is no gtc object', () => {
     const visitor1 = {
       name: 'Xuân Jahoda',
       age: 15,
