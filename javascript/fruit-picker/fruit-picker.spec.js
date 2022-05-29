@@ -80,7 +80,7 @@ describe("putting it together", () => {
     resetQuery();
   });
 
-  xtest("uses the query format", () => {
+  test("uses the query format", () => {
     setResponse(null, true);
     pickAndPurchaseFruit("jackfruit", 15);
     expect(getLastQuery()).toEqual({
@@ -89,7 +89,7 @@ describe("putting it together", () => {
     });
   });
 
-  xtest("takes parameters for the query", () => {
+  test("takes parameters for the query", () => {
     setResponse(null, true);
     pickAndPurchaseFruit("raspberry", 30);
     expect(getLastQuery()).toEqual({
@@ -98,18 +98,18 @@ describe("putting it together", () => {
     });
   });
 
-  xtest("throws error if receives inventory error", () => {
+  test("throws error if receives inventory error", () => {
     expect(() => {
       pickAndPurchaseFruit("honeydew", 3);
     }).toThrow();
   });
 
-  xtest('returns "NOOP" if quantity not available', () => {
+  test('returns "NOOP" if quantity not available', () => {
     setResponse(null, false);
     expect(pickAndPurchaseFruit("apples", 12)).toBe("NOOP");
   });
 
-  xtest('returns "PURCHASE" if quantity available', () => {
+  test('returns "PURCHASE" if quantity available', () => {
     setResponse(null, true);
     expect(pickAndPurchaseFruit("oranges", 22)).toBe("PURCHASE");
   });
