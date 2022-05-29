@@ -29,7 +29,7 @@ describe('cookingStatus', () => {
 });
 
 describe('preparationTime', () => {
-  xtest('applies the custom average time per layer', () => {
+  test('applies the custom average time per layer', () => {
     const manyLayers = [
       'sauce',
       'noodles',
@@ -50,7 +50,7 @@ describe('preparationTime', () => {
     expect(preparationTime(fewLayers, 3.5)).toBe(7);
   });
 
-  xtest('uses the default if no custom time was passed', () => {
+  test('uses the default if no custom time was passed', () => {
     const manyLayers = [
       'sauce',
       'noodles',
@@ -71,7 +71,7 @@ describe('preparationTime', () => {
     expect(preparationTime(fewLayers)).toBe(4);
   });
 
-  xtest('works with an empty layers array', () => {
+  test('works with an empty layers array', () => {
     expect(preparationTime([])).toBe(0);
   });
 });

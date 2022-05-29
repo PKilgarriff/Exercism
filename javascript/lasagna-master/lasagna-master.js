@@ -20,3 +20,7 @@ export const cookingStatus = (timeRemaining) => {
     return 'Lasagna is done.';
   }
 }
+
+export const preparationTime = (layers, averagePreparationTime = 2) => {
+  return layers.length * averagePreparationTime;
+}
