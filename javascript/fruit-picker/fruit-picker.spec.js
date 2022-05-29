@@ -60,17 +60,17 @@ describe("inventory service", () => {
 });
 
 describe("inventory result callback", () => {
-  xtest("throws error if receives inventory error", () => {
+  test("throws error if receives inventory error", () => {
     expect(() => {
       purchaseInventoryIfAvailable("inventory error", undefined);
     }).toThrow();
   });
 
-  xtest('returns "PURCHASE" when inventory is available', () => {
+  test('returns "PURCHASE" when inventory is available', () => {
     expect(purchaseInventoryIfAvailable(null, true)).toBe("PURCHASE");
   });
 
-  xtest('returns "NOOP" when inventory is unavailable', () => {
+  test('returns "NOOP" when inventory is unavailable', () => {
     expect(purchaseInventoryIfAvailable(null, false)).toBe("NOOP");
   });
 });

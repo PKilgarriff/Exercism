@@ -41,7 +41,8 @@ export function pickFruit(variety, quantity, callback) {
  * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
  */
 export function purchaseInventoryIfAvailable(err, isAvailable) {
-  throw new Error("Implement the purchaseInventoryIfAvailable function");
+  if (err) throw new Error(err);
+  return isAvailable ? "PURCHASE" : "NOOP";
 }
 
 /**
