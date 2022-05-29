@@ -38,3 +38,7 @@ export const quantities = (layers) => {
     sauce: countLayers(layers, 'sauce') * LITRES_OF_SAUCE_PER_LAYER,
   }
 }
+
+export const addSecretIngredient = (friendsList, myList) => {
+  myList.push(friendsList[friendsList.length - 1]);
+}

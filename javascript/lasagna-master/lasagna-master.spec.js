@@ -115,7 +115,7 @@ describe('quantities', () => {
 });
 
 describe('addSecretIngredient', () => {
-  xtest('adds the secret ingredient to the second array', () => {
+  test('adds the secret ingredient to the second array', () => {
     const friendsList = ['sauce', 'noodles', 'béchamel', 'marjoram'];
     const myList = ['sauce', 'noodles', 'meat', 'tomatoes'];
     addSecretIngredient(friendsList, myList);
@@ -124,7 +124,7 @@ describe('addSecretIngredient', () => {
     expect(myList).toEqual(expected);
   });
 
-  xtest('does not modify the first array', () => {
+  test('does not modify the first array', () => {
     const createFriendsList = () => [
       'noodles',
       'tomatoes',
@@ -143,7 +143,7 @@ describe('addSecretIngredient', () => {
     expect(friendsList).toEqual(createFriendsList());
   });
 
-  xtest('does not return anything', () => {
+  test('does not return anything', () => {
     const friendsList = [
       'sauce',
       'noodles',
