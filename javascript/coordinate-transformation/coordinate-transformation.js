@@ -63,5 +63,14 @@ export function composeTransform(firstFunction, secondFunction) {
  *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
  */
 export function memoizeTransform(f) {
-  throw new Error("Implement the memoizeTransform function");
+  // Looked up Memoisation here: https://www.sitepoint.com/implementing-memoization-in-javascript/
+  const memo = {};
+  const slice = Array.prototype.slice;
+
+  return function () {
+    const args = slice.call(arguments);
+
+    if (args in memo) return memo[args];
+    else return (memo[args] = f.apply(this, args));
+  };
 }
