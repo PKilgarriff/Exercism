@@ -15,17 +15,17 @@ describe('twoSum', () => {
 });
 
 describe('luckyNumber', () => {
-  test('identifies palindromic numbers', () => {
+  xtest('identifies palindromic numbers', () => {
     expect(luckyNumber(15651)).toBe(true);
     expect(luckyNumber(48911984)).toBe(true);
   });
 
-  test('identifies non-palindromic numbers', () => {
+  xtest('identifies non-palindromic numbers', () => {
     expect(luckyNumber(156512)).toBe(false);
     expect(luckyNumber(48921984)).toBe(false);
   });
 
-  test('works for small numbers', () => {
+  xtest('works for small numbers', () => {
     expect(luckyNumber(0)).toBe(true);
     expect(luckyNumber(33)).toBe(true);
     expect(luckyNumber(12)).toBe(false);
@@ -33,20 +33,20 @@ describe('luckyNumber', () => {
 });
 
 describe('errorMessage', () => {
-  test('identifies if there is no input value', () => {
+  xtest('identifies if there is no input value', () => {
     expect(errorMessage('')).toBe('Required field');
     expect(errorMessage(null)).toBe('Required field');
     expect(errorMessage(undefined)).toBe('Required field');
   });
 
-  test('identifies invalid inputs', () => {
+  xtest('identifies invalid inputs', () => {
     expect(errorMessage('some text')).toBe('Must be a number besides 0');
     expect(errorMessage('86f1')).toBe('Must be a number besides 0');
     expect(errorMessage('4 2')).toBe('Must be a number besides 0');
     expect(errorMessage('0')).toBe('Must be a number besides 0');
   });
 
-  test('returns an empty string for valid inputs', () => {
+  xtest('returns an empty string for valid inputs', () => {
     expect(errorMessage('1.234')).toBe('');
     expect(errorMessage('  784   ')).toBe('');
     expect(errorMessage('5e3')).toBe('');
