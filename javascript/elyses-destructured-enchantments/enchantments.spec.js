@@ -41,11 +41,11 @@ describe("getSecondCard", () => {
 });
 
 describe("swapTopTwoCards", () => {
-  xtest("in a deck with two cards", () => {
+  test("in a deck with two cards", () => {
     expect(swapTopTwoCards([3, 6])).toStrictEqual([6, 3]);
   });
 
-  xtest("in a deck with many cards", () => {
+  test("in a deck with many cards", () => {
     expect(swapTopTwoCards([10, 4, 3, 7, 8])).toStrictEqual([4, 10, 3, 7, 8]);
   });
 });
