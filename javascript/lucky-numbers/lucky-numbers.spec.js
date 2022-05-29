@@ -20,12 +20,12 @@ describe('luckyNumber', () => {
     expect(luckyNumber(48911984)).toBe(true);
   });
 
-  xtest('identifies non-palindromic numbers', () => {
+  test('identifies non-palindromic numbers', () => {
     expect(luckyNumber(156512)).toBe(false);
     expect(luckyNumber(48921984)).toBe(false);
   });
 
-  xtest('works for small numbers', () => {
+  test('works for small numbers', () => {
     expect(luckyNumber(0)).toBe(true);
     expect(luckyNumber(33)).toBe(true);
     expect(luckyNumber(12)).toBe(false);
