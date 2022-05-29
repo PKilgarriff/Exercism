@@ -51,11 +51,11 @@ describe("swapTopTwoCards", () => {
 });
 
 describe("discardTopCard", () => {
-  xtest("from a deck with one card", () => {
+  test("from a deck with one card", () => {
     expect(discardTopCard([7])).toStrictEqual([7, []]);
   });
 
-  xtest("from a deck with many cards", () => {
+  test("from a deck with many cards", () => {
     expect(discardTopCard([9, 2, 10, 4])).toStrictEqual([9, [2, 10, 4]]);
   });
 });
