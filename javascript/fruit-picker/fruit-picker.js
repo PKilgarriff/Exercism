@@ -30,7 +30,7 @@ export function isServiceOnline() {
  * @return {AvailabilityAction} the result from checkInventory
  */
 export function pickFruit(variety, quantity, callback) {
-  throw new Error("Implement the pickFruit function");
+  return checkInventory({ variety, quantity }, callback);
 }
 
 /**

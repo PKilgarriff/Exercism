@@ -34,7 +34,7 @@ describe("inventory service", () => {
     resetQuery();
   });
 
-  xtest("uses the query format", () => {
+  test("uses the query format", () => {
     pickFruit("strawberry", 5, () => "PURCHASE");
     expect(getLastQuery()).toEqual({
       variety: "strawberry",
@@ -42,7 +42,7 @@ describe("inventory service", () => {
     });
   });
 
-  xtest("takes parameters for the query", () => {
+  test("takes parameters for the query", () => {
     pickFruit("blueberry", 20, () => "PURCHASE");
     expect(getLastQuery()).toEqual({
       variety: "blueberry",
@@ -50,11 +50,11 @@ describe("inventory service", () => {
     });
   });
 
-  xtest("returns synchronously", () => {
+  test("returns synchronously", () => {
     expect(pickFruit("melon", 1, () => "PURCHASE")).toBe("PURCHASE");
   });
 
-  xtest("returns the inventory status", () => {
+  test("returns the inventory status", () => {
     expect(pickFruit("melon", 1, () => "NOOP")).toBe("NOOP");
   });
 });
