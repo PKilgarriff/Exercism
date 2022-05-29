@@ -36,8 +36,6 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  console.log("tickets[ticketId]", tickets[ticketId]);
-  console.log("tickets?.ticketId", tickets.ticketId);
   if (tickets[ticketId] === null) {
     return "not sold";
   } else if (tickets[ticketId] === undefined) {
