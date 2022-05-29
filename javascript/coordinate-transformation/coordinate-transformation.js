@@ -53,6 +53,10 @@ export function composeTransform(firstFunction, secondFunction) {
   };
 }
 
+const doArraysMatch = (array1, array2) => {
+  return JSON.stringify(array1) === JSON.stringify(array2);
+};
+
 /**
  * Return a function that memoizes the last result.  If the arguments are the same as the last call,
  * then memoized result returned.
@@ -64,13 +68,17 @@ export function composeTransform(firstFunction, secondFunction) {
  */
 export function memoizeTransform(f) {
   // Looked up Memoisation here: https://www.sitepoint.com/implementing-memoization-in-javascript/
-  const memo = {};
   const slice = Array.prototype.slice;
 
-  return function () {
-    const args = slice.call(arguments);
+  let previousResult;
+  let previousArguments;
 
-    if (args in memo) return memo[args];
-    else return (memo[args] = f.apply(this, args));
+  return function () {
+    const currentArguments = slice.call(arguments);
+    if (!doArraysMatch(currentArguments, previousArguments)) {
+      previousResult = f(...currentArguments);
+    }
+    previousArguments = currentArguments;
+    return previousResult;
   };
 }
