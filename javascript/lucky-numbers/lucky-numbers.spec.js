@@ -15,7 +15,7 @@ describe('twoSum', () => {
 });
 
 describe('luckyNumber', () => {
-  xtest('identifies palindromic numbers', () => {
+  test('identifies palindromic numbers', () => {
     expect(luckyNumber(15651)).toBe(true);
     expect(luckyNumber(48911984)).toBe(true);
   });
