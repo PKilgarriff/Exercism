@@ -55,10 +55,10 @@ describe("getFirstOddCard", () => {
 });
 
 describe("getFirstEvenCardPosition", () => {
-  xtest("should return position of first even card", () => {
+  test("should return position of first even card", () => {
     expect(getFirstEvenCardPosition([2, 4, 1, 3])).toBe(0);
   });
-  xtest("should return -1 when the card is not found", () => {
+  test("should return -1 when the card is not found", () => {
     expect(getFirstEvenCardPosition([1, 3, 5])).toBe(-1);
   });
 });
