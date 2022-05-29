@@ -105,7 +105,7 @@ describe('simpleTicketStatus', () => {
 });
 
 describe('gtcVersion', () => {
-  xtest('determines the GTC version if it is present', () => {
+  test('determines the GTC version if it is present', () => {
     const visitor1 = {
       name: 'Zohar Pekkanen',
       age: 28,
