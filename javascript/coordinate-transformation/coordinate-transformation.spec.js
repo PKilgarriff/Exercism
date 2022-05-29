@@ -52,14 +52,14 @@ describe("scale2d", () => {
   const x1 = 1;
   const y1 = 1;
   const expected = [4, 2];
-  xtest("should be predictable", () => {
+  test("should be predictable", () => {
     expect(scaler(x1, y1)).toEqual(expected);
   });
 
   const x2 = -2;
   const y2 = 5;
   const reusedExpected = [-8, 10];
-  xtest("should be reusable", () => {
+  test("should be reusable", () => {
     expect(scaler(x2, y2)).toEqual(reusedExpected);
   });
 });
@@ -72,26 +72,26 @@ describe("composeTransform", () => {
   const sy = 2;
   const scaler = scale2d(sx, sy);
 
-  xtest("should return a function", () => {
+  test("should return a function", () => {
     expect(typeof composeTransform(translator, scaler)).toBe("function");
   });
 
-  xtest("should compose two translate functions", () => {
+  test("should compose two translate functions", () => {
     const composeTranslate = composeTransform(translator, translator);
     expect(composeTranslate(0, 0)).toEqual([-12, 20]);
   });
 
-  xtest("should compose two scale functions", () => {
+  test("should compose two scale functions", () => {
     const composeScale = composeTransform(scaler, scaler);
     expect(composeScale(1, 1)).toEqual([9, 4]);
   });
 
-  xtest("should compose in the correct order: g(f(x))", () => {
+  test("should compose in the correct order: g(f(x))", () => {
     const composed = composeTransform(scaler, translator);
     expect(composed(0, 0)).toEqual([-6, 10]);
   });
 
-  xtest("should compose in the opposite order: g(f(x))", () => {
+  test("should compose in the opposite order: g(f(x))", () => {
     const composed = composeTransform(translator, scaler);
     expect(composed(0, 0)).toEqual([-18, 20]);
   });

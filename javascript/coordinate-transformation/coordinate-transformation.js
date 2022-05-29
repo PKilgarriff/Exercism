@@ -46,8 +46,11 @@ export function scale2d(sx, sy) {
  * @returns {function} a function which takes an x, y parameter, returns the
  *  transformed coordinate pair in the form [x, y]
  */
-export function composeTransform(f, g) {
-  throw new Error("Implement the composeTransform function");
+export function composeTransform(firstFunction, secondFunction) {
+  return (x, y) => {
+    let [a, b] = firstFunction(x, y);
+    return secondFunction(a, b);
+  };
 }
 
 /**
