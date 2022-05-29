@@ -29,7 +29,7 @@ describe('cookingStatus', () => {
 });
 
 describe('preparationTime', () => {
-  test('applies the custom average time per layer', () => {
+  xtest('applies the custom average time per layer', () => {
     const manyLayers = [
       'sauce',
       'noodles',
@@ -50,7 +50,7 @@ describe('preparationTime', () => {
     expect(preparationTime(fewLayers, 3.5)).toBe(7);
   });
 
-  test('uses the default if no custom time was passed', () => {
+  xtest('uses the default if no custom time was passed', () => {
     const manyLayers = [
       'sauce',
       'noodles',
@@ -71,13 +71,13 @@ describe('preparationTime', () => {
     expect(preparationTime(fewLayers)).toBe(4);
   });
 
-  test('works with an empty layers array', () => {
+  xtest('works with an empty layers array', () => {
     expect(preparationTime([])).toBe(0);
   });
 });
 
 describe('quantities', () => {
-  test('calculates the amounts of noodles and sauce correctly', () => {
+  xtest('calculates the amounts of noodles and sauce correctly', () => {
     const fewLayers = ['noodles', 'sauce', 'noodles'];
     expectObjectsToBeEqual(quantities(fewLayers), { noodles: 100, sauce: 0.2 });
 
@@ -101,7 +101,7 @@ describe('quantities', () => {
     });
   });
 
-  test('works if there are no noodles or no sauce found in the layers', () => {
+  xtest('works if there are no noodles or no sauce found in the layers', () => {
     const noNoodles = ['sauce', 'béchamel', 'sauce', 'meat', 'sauce'];
     expectObjectsToBeEqual(quantities(noNoodles), { noodles: 0, sauce: 0.6 });
 
@@ -109,13 +109,13 @@ describe('quantities', () => {
     expectObjectsToBeEqual(quantities(noSauce), { noodles: 50, sauce: 0 });
   });
 
-  test('works with an empty layers array', () => {
+  xtest('works with an empty layers array', () => {
     expect(quantities([])).toEqual({ noodles: 0, sauce: 0 });
   });
 });
 
 describe('addSecretIngredient', () => {
-  test('adds the secret ingredient to the second array', () => {
+  xtest('adds the secret ingredient to the second array', () => {
     const friendsList = ['sauce', 'noodles', 'béchamel', 'marjoram'];
     const myList = ['sauce', 'noodles', 'meat', 'tomatoes'];
     addSecretIngredient(friendsList, myList);
@@ -124,7 +124,7 @@ describe('addSecretIngredient', () => {
     expect(myList).toEqual(expected);
   });
 
-  test('does not modify the first array', () => {
+  xtest('does not modify the first array', () => {
     const createFriendsList = () => [
       'noodles',
       'tomatoes',
@@ -143,7 +143,7 @@ describe('addSecretIngredient', () => {
     expect(friendsList).toEqual(createFriendsList());
   });
 
-  test('does not return anything', () => {
+  xtest('does not return anything', () => {
     const friendsList = [
       'sauce',
       'noodles',
@@ -157,7 +157,7 @@ describe('addSecretIngredient', () => {
 });
 
 describe('scaleRecipe', () => {
-  test('scales up correctly', () => {
+  xtest('scales up correctly', () => {
     const recipe1 = {
       sauce: 0.5,
       noodles: 250,
@@ -201,7 +201,7 @@ describe('scaleRecipe', () => {
     expectObjectsToBeEqual(scaleRecipe(recipe2, 3), expected2);
   });
 
-  test('scales down correctly', () => {
+  xtest('scales down correctly', () => {
     const recipe = {
       sauce: 0.5,
       noodles: 250,
@@ -220,11 +220,11 @@ describe('scaleRecipe', () => {
     expectObjectsToBeEqual(scaleRecipe(recipe, 1), expected);
   });
 
-  test('works for an empty recipe', () => {
+  xtest('works for an empty recipe', () => {
     expect(scaleRecipe({})).toEqual({});
   });
 
-  test('does not modify the original recipe', () => {
+  xtest('does not modify the original recipe', () => {
     const recipe = {
       sauce: 1,
       noodles: 250,
