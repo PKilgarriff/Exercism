@@ -50,19 +50,19 @@ describe('graduationFor', () => {
 });
 
 describe('costOf', () => {
-  xtest('sign is total of characters followed by the currency', () => {
+  test('sign is total of characters followed by the currency', () => {
     const sign = 'Happy Birthday!';
     const expected = 'Your sign costs 50.00 dollars.';
     expect(costOf(sign, 'dollars')).toBe(expected);
   });
 
-  xtest('includes line breaks in the calculation', () => {
+  test('includes line breaks in the calculation', () => {
     const sign = 'Congratulations Rob\nClass of 2021';
     const expected = 'Your sign costs 86.00 dollars.';
     expect(costOf(sign, 'dollars')).toBe(expected);
   });
 
-  xtest('handles different currency arguments', () => {
+  test('handles different currency arguments', () => {
     const sign = 'Happy Easter, little sister!';
     const expected = 'Your sign costs 76.00 euros.';
     expect(costOf(sign, 'euros')).toBe(expected);
