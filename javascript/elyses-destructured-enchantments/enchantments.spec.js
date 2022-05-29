@@ -61,7 +61,7 @@ describe("discardTopCard", () => {
 });
 
 describe("insertFaceCards", () => {
-  xtest("into a deck with many cards", () => {
+  test("into a deck with many cards", () => {
     expect(insertFaceCards([3, 10, 7])).toStrictEqual([
       3,
       "jack",
@@ -72,11 +72,11 @@ describe("insertFaceCards", () => {
     ]);
   });
 
-  xtest("into a deck with one card", () => {
+  test("into a deck with one card", () => {
     expect(insertFaceCards([9])).toStrictEqual([9, "jack", "queen", "king"]);
   });
 
-  xtest("into a deck with no cards", () => {
+  test("into a deck with no cards", () => {
     expect(insertFaceCards([])).toStrictEqual([
       undefined,
       "jack",
