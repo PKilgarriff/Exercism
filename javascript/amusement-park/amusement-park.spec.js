@@ -19,7 +19,7 @@ describe('createVisitor', () => {
 });
 
 describe('revokeTicket', () => {
-  xtest('sets the ticketId to null', () => {
+  test('sets the ticketId to null', () => {
     const visitor = { name: 'María Pilar Neri', age: 16, ticketId: 'MFBSF3S2' };
 
     const expected = { name: 'María Pilar Neri', age: 16, ticketId: null };
