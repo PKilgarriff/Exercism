@@ -26,7 +26,7 @@ describe('revokeTicket', () => {
     expect(revokeTicket(visitor)).toEqual(expected);
   });
 
-  xtest('returns the same object that was passed in', () => {
+  test('returns the same object that was passed in', () => {
     const visitor = { name: 'Anatoli Traverse', age: 34, ticketId: 'AA5AA01D' };
 
     // This checks that the same object that was passed in is returned.
@@ -34,7 +34,7 @@ describe('revokeTicket', () => {
     expect(Object.is(revokeTicket(visitor), visitor)).toBe(true);
   });
 
-  xtest('does nothing if the ticket was already revoked', () => {
+  test('does nothing if the ticket was already revoked', () => {
     const visitor = { name: 'Min-Ji Chu', age: 51, ticketId: null };
     const actual = revokeTicket(visitor);
 
