@@ -13,7 +13,7 @@ describe("getCardPosition", () => {
   test("when it is the first card", () => {
     expect(getCardPosition([1, 2, 3], 1)).toBe(0);
   });
-  xtest("when the card is not found", () => {
+  test("when the card is not found", () => {
     expect(getCardPosition([1, 2, 3], 4)).toBe(-1);
   });
 });
