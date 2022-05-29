@@ -18,19 +18,19 @@ describe('buildSign', () => {
 });
 
 describe('buildBirthdaySign', () => {
-  xtest('age is less than 50', () => {
+  test('age is less than 50', () => {
     expect(buildBirthdaySign(49)).toBe(
       'Happy Birthday! What a young fellow you are.'
     );
   });
 
-  xtest('age is 50 or older', () => {
+  test('age is 50 or older', () => {
     expect(buildBirthdaySign(51)).toBe(
       'Happy Birthday! What a mature fellow you are.'
     );
   });
 
-  xtest('age is 50', () => {
+  test('age is 50', () => {
     expect(buildBirthdaySign(50)).toBe(
       'Happy Birthday! What a mature fellow you are.'
     );
