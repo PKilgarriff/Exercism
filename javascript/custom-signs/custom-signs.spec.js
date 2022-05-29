@@ -38,12 +38,12 @@ describe('buildBirthdaySign', () => {
 });
 
 describe('graduationFor', () => {
-  xtest('Robs graduation, 2021', () => {
+  test('Robs graduation, 2021', () => {
     const expected = 'Congratulations Rob!\nClass of 2021';
     expect(graduationFor('Rob', 2021)).toBe(expected);
   });
 
-  xtest('Jills graduation, 1999', () => {
+  test('Jills graduation, 1999', () => {
     const expected = 'Congratulations Jill!\nClass of 1999';
     expect(graduationFor('Jill', 1999)).toBe(expected);
   });
