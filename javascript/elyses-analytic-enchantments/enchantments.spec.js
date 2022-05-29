@@ -37,19 +37,19 @@ describe("isEachCardEven", () => {
 });
 
 describe("doesStackIncludeOddCard", () => {
-  xtest("should be true if odd number card is found", () => {
+  test("should be true if odd number card is found", () => {
     expect(doesStackIncludeOddCard([2, 5])).toBe(true);
   });
-  xtest("should be false if no odd number card is found", () => {
+  test("should be false if no odd number card is found", () => {
     expect(doesStackIncludeOddCard([2, 4, 6])).toBe(false);
   });
 });
 
 describe("getFirstOddCard", () => {
-  xtest("should return the first odd card found", () => {
+  test("should return the first odd card found", () => {
     expect(getFirstOddCard([2, 4, 1, 3])).toBe(1);
   });
-  xtest("should return undefined if odd card is not found", () => {
+  test("should return undefined if odd card is not found", () => {
     expect(getFirstOddCard([4, 2, 6])).toBeUndefined();
   });
 });
