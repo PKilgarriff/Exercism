@@ -33,20 +33,20 @@ describe('luckyNumber', () => {
 });
 
 describe('errorMessage', () => {
-  xtest('identifies if there is no input value', () => {
+  test('identifies if there is no input value', () => {
     expect(errorMessage('')).toBe('Required field');
     expect(errorMessage(null)).toBe('Required field');
     expect(errorMessage(undefined)).toBe('Required field');
   });
 
-  xtest('identifies invalid inputs', () => {
+  test('identifies invalid inputs', () => {
     expect(errorMessage('some text')).toBe('Must be a number besides 0');
     expect(errorMessage('86f1')).toBe('Must be a number besides 0');
     expect(errorMessage('4 2')).toBe('Must be a number besides 0');
     expect(errorMessage('0')).toBe('Must be a number besides 0');
   });
 
-  xtest('returns an empty string for valid inputs', () => {
+  test('returns an empty string for valid inputs', () => {
     expect(errorMessage('1.234')).toBe('');
     expect(errorMessage('  784   ')).toBe('');
     expect(errorMessage('5e3')).toBe('');
