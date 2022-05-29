@@ -24,3 +24,17 @@ export const cookingStatus = (timeRemaining) => {
 export const preparationTime = (layers, averagePreparationTime = 2) => {
   return layers.length * averagePreparationTime;
 }
+
+const countLayers = (layers, type) => {
+  return layers.filter((layer) => { return layer === type }).length;
+}
+
+const GRAMS_OF_NOODLES_PER_LAYER = 50;
+const LITRES_OF_SAUCE_PER_LAYER = 0.2;
+
+export const quantities = (layers) => {
+  return {
+    noodles: countLayers(layers, 'noodles') * GRAMS_OF_NOODLES_PER_LAYER,
+    sauce: countLayers(layers, 'sauce') * LITRES_OF_SAUCE_PER_LAYER,
+  }
+}

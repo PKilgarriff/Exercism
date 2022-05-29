@@ -77,7 +77,7 @@ describe('preparationTime', () => {
 });
 
 describe('quantities', () => {
-  xtest('calculates the amounts of noodles and sauce correctly', () => {
+  test('calculates the amounts of noodles and sauce correctly', () => {
     const fewLayers = ['noodles', 'sauce', 'noodles'];
     expectObjectsToBeEqual(quantities(fewLayers), { noodles: 100, sauce: 0.2 });
 
@@ -101,7 +101,7 @@ describe('quantities', () => {
     });
   });
 
-  xtest('works if there are no noodles or no sauce found in the layers', () => {
+  test('works if there are no noodles or no sauce found in the layers', () => {
     const noNoodles = ['sauce', 'béchamel', 'sauce', 'meat', 'sauce'];
     expectObjectsToBeEqual(quantities(noNoodles), { noodles: 0, sauce: 0.6 });
 
@@ -109,7 +109,7 @@ describe('quantities', () => {
     expectObjectsToBeEqual(quantities(noSauce), { noodles: 50, sauce: 0 });
   });
 
-  xtest('works with an empty layers array', () => {
+  test('works with an empty layers array', () => {
     expect(quantities([])).toEqual({ noodles: 0, sauce: 0 });
   });
 });
