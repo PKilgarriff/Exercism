@@ -70,27 +70,27 @@ describe('ticketStatus', () => {
 });
 
 describe('simpleTicketStatus', () => {
-  xtest('identifies ticket that are not in the tracking object as invalid', () => {
+  test('identifies ticket that are not in the tracking object as invalid', () => {
     const expected = 'invalid ticket !!!';
     expect(simpleTicketStatus(testTickets(), 'Y4KXZOYM')).toBe(expected);
     expect(simpleTicketStatus(testTickets(), '8ATQC1ZJ')).toBe(expected);
     expect(simpleTicketStatus(testTickets(), 'G833HR8A')).toBe(expected);
   });
 
-  xtest('identifies tickets that are not sold as invalid', () => {
+  test('identifies tickets that are not sold as invalid', () => {
     const expected = 'invalid ticket !!!';
     expect(simpleTicketStatus(testTickets(), 'V42NWRMQ')).toBe(expected);
     expect(simpleTicketStatus(testTickets(), 'A56MTX8E')).toBe(expected);
     expect(simpleTicketStatus(testTickets(), 'YEVHK4MC')).toBe(expected);
   });
 
-  xtest('returns the visitor name for tickets that were sold', () => {
+  test('returns the visitor name for tickets that were sold', () => {
     expect(simpleTicketStatus(testTickets(), 'QINS6S94')).toBe('Hong Hsu');
     expect(simpleTicketStatus(testTickets(), 'H31SAW5Q')).toBe('Lior MacNeil');
     expect(simpleTicketStatus(testTickets(), 'M9ZTXP89')).toBe('Kamani Ybarra');
   });
 
-  xtest('tickets with "strange" name values are valid nevertheless', () => {
+  test('tickets with "strange" name values are valid nevertheless', () => {
     const tickets = {
       B7627X32: '',
       XF1X6S2W: 0,
