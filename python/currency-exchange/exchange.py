@@ -1,3 +1,6 @@
+"""Functions for implementing a currency converter for my imaginary friend Chandler"""
+
+
 def exchange_money(budget, exchange_rate):
     """Calculate value of exchanged currency
 
@@ -20,7 +23,7 @@ def get_change(budget, exchanging_value):
 
 
 def get_value_of_bills(denomination, number_of_bills):
-    """
+    """Calculate how much a stack of bills is worth
 
     :param denomination: int - the value of a bill.
     :param number_of_bills: int - amount of bills you received.
@@ -31,7 +34,7 @@ def get_value_of_bills(denomination, number_of_bills):
 
 
 def get_number_of_bills(budget, denomination):
-    """
+    """Calculate how many bills of a certain denomination you would receive when making an exchange
 
     :param budget: float - the amount of money you are planning to exchange.
     :param denomination: int - the value of a single bill.
@@ -42,7 +45,7 @@ def get_number_of_bills(budget, denomination):
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):
-    """
+    """Calculate the actual value of the bills you receive from the exchange
 
     :param budget: float - the amount of your money you are planning to exchange.
     :param exchange_rate: float - the unit value of the foreign currency.
@@ -58,7 +61,7 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
 
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
-    """
+    """Calculate how much you lose out on in exchange value b choice of denomination bill
 
     :param budget: float - the amount of your money you are planning to exchange.
     :param exchange_rate: float - the unit value of the foreign currency.
