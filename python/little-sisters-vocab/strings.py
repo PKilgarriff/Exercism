@@ -1,6 +1,17 @@
 """Functions for creating, transforming, and adding prefixes to strings."""
 
 
+def add_prefix(prefix, word):
+    """Take the given word and add the 'un' prefix.
+
+    :param prefix: str - containing the prefix.
+    :param word: str - containing the root word.
+    :return: str - of root word prepended with prefix.
+    """
+
+    return prefix + word
+
+
 def add_prefix_un(word):
     """Take the given word and add the 'un' prefix.
 
@@ -8,7 +19,7 @@ def add_prefix_un(word):
     :return: str - of root word prepended with 'un'.
     """
 
-    return 'un' + word
+    return add_prefix("un", word)
 
 
 def make_word_groups(vocab_words):
@@ -26,7 +37,14 @@ def make_word_groups(vocab_words):
     produces the following string: 'en :: enclose :: enjoy :: enlighten'.
     """
 
-    pass
+    prefix = vocab_words[0]
+    return_strings = []
+    for i in range(len(vocab_words)):
+        word = vocab_words[i]
+        if i > 0:
+            word = add_prefix(prefix, word)
+        return_strings.append(word)
+    return " :: ".join(return_strings)
 
 
 def remove_suffix_ness(word):
