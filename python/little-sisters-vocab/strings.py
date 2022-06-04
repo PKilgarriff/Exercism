@@ -39,9 +39,8 @@ def make_word_groups(vocab_words):
 
     prefix = vocab_words[0]
     return_strings = []
-    for i in range(len(vocab_words)):
-        word = vocab_words[i]
-        if i > 0:
+    for index, word in enumerate(vocab_words):
+        if index > 0:
             word = add_prefix(prefix, word)
         return_strings.append(word)
     return " :: ".join(return_strings)
