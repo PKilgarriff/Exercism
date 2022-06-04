@@ -23,7 +23,9 @@ def add_prefix_un(word):
 
 
 def make_word_groups(vocab_words):
-    """Transform a list containing a prefix and words into a string with the prefix followed by the words with prefix prepended.
+    """
+    Transform a list containing a prefix and words into a string
+    with the prefix followed by the words with prefix prepended.
 
     :param vocab_words: list - of vocabulary words with prefix in first index.
     :return: str - of prefix followed by vocabulary words with
@@ -56,8 +58,7 @@ def remove_suffix_ness(word):
     """
     if word[-5] == "i":
         return word[:-5] + "y"
-    else:
-        return word[:-4]
+    return word[:-4]
 
 
 def adjective_to_verb(sentence, index):
