@@ -41,5 +41,7 @@ def scalene(sides):
     :param sides:array - numbers representing the length of the sides of a triangle
     :return:boolean - is the triangle scalene?
     """
-
-    pass
+    if triangle_inequality_violation(sides):
+        side_a, side_b, side_c = sides
+        return side_a != side_b != side_c
+    return False
