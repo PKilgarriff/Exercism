@@ -1,6 +1,16 @@
 """Functions to determine the type of a triangle"""
 
 
+def triangle_inequality_violation(sides):
+    """Determine if a triangle violates the triangle inequality rule
+
+    :param sides:array - numbers representing the length of the sides of a triangle
+    :return:boolean - does the triangle violate the rule??
+    """
+    side_a, side_b, side_c = sides
+    return side_a + side_b >= side_c and side_b + side_c >= side_a and side_a + side_c >= side_b
+
+
 def equilateral(sides):
     """Determine if a triangle is equilateral
 
@@ -19,7 +29,10 @@ def isosceles(sides):
     :param sides:array - numbers representing the length of the sides of a triangle
     :return:boolean - is the triangle isosceles?
     """
-    pass
+    if triangle_inequality_violation(sides):
+        side_a, side_b, side_c = sides
+        return side_a == side_b or side_b == side_c or side_a == side_c
+    return False
 
 
 def scalene(sides):
