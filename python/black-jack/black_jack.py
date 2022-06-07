@@ -69,8 +69,11 @@ def is_blackjack(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
-
-    pass
+    hand = [card_one, card_two]
+    ace_in_hand = "A" in hand
+    card_of_value_ten_in_hand = 10 in list(
+        map(value_of_card, hand))
+    return ace_in_hand and card_of_value_ten_in_hand
 
 
 def can_split_pairs(card_one, card_two):
