@@ -32,9 +32,7 @@ def higher_card(card_one, card_two):
     2.  'A' (ace card) = 1
     3.  '2' - '10' = numerical value.
     """
-    if card_one == card_two:
-        return (card_one, card_two)
-    elif value_of_card(card_one) > value_of_card(card_two):
+    if value_of_card(card_one) > value_of_card(card_two):
         return card_one
     elif value_of_card(card_one) == value_of_card(card_two):
         return (card_one, card_two)
