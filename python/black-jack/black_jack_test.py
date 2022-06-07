@@ -46,18 +46,6 @@ class BlackJackTest(unittest.TestCase):
                 self.assertEqual(higher_card(
                     card_one, card_two), result, msg=error_msg)
 
-    def test_two_aces_returns_two_aces(self):
-        data = [
-            ('A', 'A', ('A', 'A')),
-        ]
-
-        for variant, (card_one, card_two, result) in enumerate(data, 1):
-            with self.subTest(f'variation #{variant}', card_one=card_one, card_two=card_two, output=result):
-                error_msg = f'Expected {result} as the higher value of the cards {card_one, card_two}.'
-
-                self.assertEqual(higher_card(
-                    card_one, card_two), result, msg=error_msg)
-
     @pytest.mark.task(taskno=3)
     def test_value_of_ace(self):
         data = [

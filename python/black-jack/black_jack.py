@@ -4,6 +4,8 @@ How to play blackjack:    https://bicyclecards.com/how-to-play/blackjack/
 "Standard" playing cards: https://en.wikipedia.org/wiki/Standard_52-card_deck
 """
 
+SCORE_LIMIT = 21
+
 
 def value_of_card(card):
     """Determine the scoring value of a card.
@@ -49,8 +51,12 @@ def value_of_ace(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
-
-    pass
+    total_value = sum(map(value_of_card, (card_one, card_two)))
+    if card_one == "A" or card_two == "A":
+        total_value += 10
+    if total_value + 11 > SCORE_LIMIT:
+        return 1
+    return 11
 
 
 def is_blackjack(card_one, card_two):
