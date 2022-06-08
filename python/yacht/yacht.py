@@ -73,6 +73,19 @@ def full_house(dice):
     return 0
 
 
+def four_of_a_kind(dice):
+    count_occurrences(dice)
+    counts = list(count_occurrences(dice).items())
+    filtered_counts = list(filter(lambda entry: entry[1] >= 4, counts))
+    try:
+        filtered_counts[0]
+    except:
+        return 0
+    else:
+        dice_value = filtered_counts[0][0]
+        return 4 * dice_value
+
+
 YACHT = is_yacht
 ONES = ones
 TWOS = twos
@@ -81,7 +94,7 @@ FOURS = fours
 FIVES = fives
 SIXES = sixes
 FULL_HOUSE = full_house
-FOUR_OF_A_KIND = None
+FOUR_OF_A_KIND = four_of_a_kind
 LITTLE_STRAIGHT = little_straight
 BIG_STRAIGHT = big_straight
 CHOICE = calculate_choice
