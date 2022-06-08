@@ -53,17 +53,20 @@ def big_straight(dice):
     return 0
 
 
-def full_house(dice):
+def count_occurrences(dice):
     counts = {}
     for value in dice:
-        print(f"{value}: {dice.count(value)}")
         try:
             counts[value]
         except:
             counts[value] = 1
         else:
             counts[value] += 1
-    card_counts = list(counts.values())
+    return counts
+
+
+def full_house(dice):
+    card_counts = list(count_occurrences(dice).values())
     card_counts.sort()
     if card_counts == [2, 3]:
         return sum(dice)
