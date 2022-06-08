@@ -26,7 +26,7 @@ def sixes(dice):
     return sum_occurrences(dice, 6)
 
 
-def calculate_total(dice):
+def calculate_choice(dice):
     return sum(dice)
 
 
@@ -53,6 +53,23 @@ def big_straight(dice):
     return 0
 
 
+def full_house(dice):
+    counts = {}
+    for value in dice:
+        print(f"{value}: {dice.count(value)}")
+        try:
+            counts[value]
+        except:
+            counts[value] = 1
+        else:
+            counts[value] += 1
+    card_counts = list(counts.values())
+    card_counts.sort()
+    if card_counts == [2, 3]:
+        return sum(dice)
+    return 0
+
+
 YACHT = is_yacht
 ONES = ones
 TWOS = twos
@@ -60,11 +77,11 @@ THREES = threes
 FOURS = fours
 FIVES = fives
 SIXES = sixes
-FULL_HOUSE = None
+FULL_HOUSE = full_house
 FOUR_OF_A_KIND = None
 LITTLE_STRAIGHT = little_straight
 BIG_STRAIGHT = big_straight
-CHOICE = calculate_total
+CHOICE = calculate_choice
 
 
 def score(dice, category_function):
