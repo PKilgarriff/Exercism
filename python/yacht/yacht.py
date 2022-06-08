@@ -1,32 +1,39 @@
 def ones(dice):
-    return sum(filter(lambda number: number == 1, dice,))
+    return sum(filter(lambda number: number == 1, dice))
 
 
 def twos(dice):
-    return sum(filter(lambda number: number == 2, dice,))
+    return sum(filter(lambda number: number == 2, dice))
 
 
 def threes(dice):
-    return sum(filter(lambda number: number == 3, dice,))
+    return sum(filter(lambda number: number == 3, dice))
 
 
 def fours(dice):
-    return sum(filter(lambda number: number == 4, dice,))
+    return sum(filter(lambda number: number == 4, dice))
 
 
 def fives(dice):
-    return sum(filter(lambda number: number == 5, dice,))
+    return sum(filter(lambda number: number == 5, dice))
 
 
 def sixes(dice):
-    return sum(filter(lambda number: number == 6, dice,))
+    return sum(filter(lambda number: number == 6, dice))
 
 
 def calculate_total(dice):
     return sum(dice)
 
 
-YACHT = None
+def is_yacht(dice):
+    first = dice[0]
+    if all(map(lambda number: number == first, dice)):
+        return 50
+    return 0
+
+
+YACHT = is_yacht
 ONES = ones
 TWOS = twos
 THREES = threes
