@@ -1,6 +1,9 @@
 """Functions to help edit essay homework using string manipulation."""
 
 
+from hashlib import new
+
+
 def capitalize_title(title):
     """Convert the first letter of each word in the title to uppercase if needed.
 
@@ -38,4 +41,4 @@ def replace_word_choice(sentence, old_word, new_word):
     :return: str - input sentence with new words in place of old words.
     """
 
-    pass
+    return sentence.replace(old_word, new_word)
