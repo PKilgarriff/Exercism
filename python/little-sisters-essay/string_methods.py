@@ -17,8 +17,7 @@ def check_sentence_ending(sentence):
     :param sentence: str - a sentence to check.
     :return: bool - return True if punctuated correctly with period, False otherwise.
     """
-
-    pass
+    return sentence[-1] == "."
 
 
 def clean_up_spacing(sentence):
