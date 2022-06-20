@@ -74,9 +74,8 @@ def full_house(dice):
 
 
 def four_of_a_kind(dice):
-    count_occurrences(dice)
     counts = list(count_occurrences(dice).items())
-    filtered_counts = list(filter(lambda entry: entry[1] >= 4, counts))
+    filtered_counts = [entry for entry in counts if entry[1] >= 4]
     try:
         filtered_counts[0]
     except:
