@@ -79,8 +79,13 @@ def average_even_is_average_odd(hand):
     :param hand: list - cards in hand.
     :return: bool - are even and odd averages equal?
     """
-
-    pass
+    odd_indexed_cards = [card for index,
+                         card in enumerate(hand) if index % 2 != 0]
+    even_indexed_cards = [card for index,
+                          card in enumerate(hand) if index % 2 == 0]
+    odd_average = card_average(odd_indexed_cards)
+    even_average = card_average(even_indexed_cards)
+    return odd_average == even_average
 
 
 def maybe_double_last(hand):
