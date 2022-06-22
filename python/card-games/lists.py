@@ -45,14 +45,32 @@ def card_average(hand):
     return sum(hand) / len(hand)
 
 
+def first_and_last_average(hand):
+    """Calculates and returns the average of the first and last card in the hand.
+
+    :param hand: list - cards in hand.
+    :return: float - average of the first and last card in the hand.
+    """
+    return (hand[0] + hand[-1]) / 2
+
+
+def middle_card(hand):
+    """Returns the card in the middle position of the hand.
+
+    :param hand: list - cards in hand.
+    :return: int - the value of the card in the middle of the hand.
+    """
+    middle_index = len(hand) // 2
+    return hand[middle_index]
+
+
 def approx_average_is_average(hand):
     """Return if an average is using (first + last index values ) OR ('middle' card) == calculated average.
 
     :param hand: list - cards in hand.
     :return: bool - does one of the approximate averages equal the `true average`?
     """
-
-    pass
+    return first_and_last_average(hand) == card_average(hand) or middle_card(hand) == card_average(hand)
 
 
 def average_even_is_average_odd(hand):
